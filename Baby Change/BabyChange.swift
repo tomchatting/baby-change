@@ -30,7 +30,27 @@ class BabyChange: NSObject, MKAnnotation {
             super.init()
         }
     
+    init?(feature: MKGeoJSONFeature) {
+        guard
+            let point = feature.geometry.first as?
+                MKPointAnnotation,
+            let propertiesData = feature.properties,
+            let json = try? JSONSerialization.jsonObject(with:propertiesData),
+            let properties = json as? [String: Any]
+        else {
+            return nil;
+        }
+        
+        title = properties["title"] as? String
+        desc = properties["desc"] as? String
+        floor = properties["floor"] as? String
+        rating = properties["rating"] as? Float
+        coordinate = point.coordinate
+        super.init()
+    }
+    
     var subtitle: String? {
         return desc
     }
+    
 }

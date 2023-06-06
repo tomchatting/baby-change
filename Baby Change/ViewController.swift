@@ -13,6 +13,31 @@ class ViewController: UIViewController {
     @IBOutlet private var mapView:
     MKMapView!
     
+    private var babyChanges: [BabyChange] = []
+    
+    private func loadInitialData() {
+        guard
+            let fileName = Bundle.main.url(
+                forResource: "BabyChanges",
+                withExtension: "geojson"),
+            let babyChangesData = try? Data(contentsOf: fileName)
+        else {
+            return
+        }
+        
+        do {
+            let features = try MKGeoJSONDecoder()
+                .decode(babyChangesData)
+                .compactMap { $0 as? MKGeoJSONFeature }
+            
+            let validChanges = features.compactMap(BabyChange.init)
+            
+            babyChanges.append(contentsOf: validChanges)
+        } catch {
+            print("Unexpected error: \(error).")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,20 +59,11 @@ class ViewController: UIViewController {
         
         mapView.setCameraZoomRange(zoomRange, animated: true)
         
-        
-        
-        // Show baby changes on map
-        let babyChange = BabyChange(
-            title: "Trinity Shopping Centre",
-            desc: "Baby change, family room, quiet, clean",
-            floor: "2F",
-            rating: 5.0,
-            coordinate: CLLocationCoordinate2D(latitude: 53.79700956820782, longitude: -1.5440297444132693)
-        )
-        
         mapView.delegate = self
         
-        mapView.addAnnotation(babyChange)
+        loadInitialData()
+        
+        mapView.addAnnotations(babyChanges)
     }
 
 }

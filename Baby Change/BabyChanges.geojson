@@ -5,19 +5,41 @@
     "type":"Feature",
     "properties":{
       "title":"Trinity Shopping Centre",
-      "desc":"...",
+      "desc":"Clean, spacious, family room",
       "floor":"Top floor",
       "rating":"5.0",
       "ratings":"1",
       "added_by":"Thomas Chatting",
-      "added_at":"2023-06-06T21:56:00.000Z"
+      "added_at":"2023-06-06T21:56:00.000Z",
+      "latitude":"53.79700956820782",
+      "longitude":"-1.5440297444132693"
     },
    "geometry":{
     "type":"Point",
     "coordinates": [
         -1.5440297444132693,53.79700956820782
     ]
-   }
+    }
+   },
+    {
+    "type":"Feature",
+    "properties":{
+      "title":"The Light",
+      "desc":"Difficult to find, often locked",
+      "floor":"Top floor",
+      "rating":"3.0",
+      "ratings":"1",
+      "added_by":"Thomas Chatting",
+      "added_at":"2023-06-06T21:56:00.000Z",
+      "latitude":"53.79996291450602",
+      "longitude":"-1.5457350677100414"
+    },
+   "geometry":{
+    "type":"Point",
+    "coordinates": [
+        -1.5457350677100414,53.79996291450602
+    ]
+    }
    }
   ]
 }
