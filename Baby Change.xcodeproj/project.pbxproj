@@ -17,6 +17,8 @@
 		A7382B5E2A2FCB28006F73DC /* Baby_ChangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7382B5D2A2FCB28006F73DC /* Baby_ChangeTests.swift */; };
 		A7382B682A2FCB28006F73DC /* Baby_ChangeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7382B672A2FCB28006F73DC /* Baby_ChangeUITests.swift */; };
 		A7382B6A2A2FCB28006F73DC /* Baby_ChangeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7382B692A2FCB28006F73DC /* Baby_ChangeUITestsLaunchTests.swift */; };
+		A7382B772A2FD7BC006F73DC /* BabyChanges.geojson in Resources */ = {isa = PBXBuildFile; fileRef = A7382B762A2FD7BC006F73DC /* BabyChanges.geojson */; };
+		A7382B7B2A2FD824006F73DC /* BabyChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7382B7A2A2FD824006F73DC /* BabyChange.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		A7382B632A2FCB28006F73DC /* Baby ChangeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Baby ChangeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7382B672A2FCB28006F73DC /* Baby_ChangeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Baby_ChangeUITests.swift; sourceTree = "<group>"; };
 		A7382B692A2FCB28006F73DC /* Baby_ChangeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Baby_ChangeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A7382B762A2FD7BC006F73DC /* BabyChanges.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = BabyChanges.geojson; sourceTree = "<group>"; };
+		A7382B7A2A2FD824006F73DC /* BabyChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyChange.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 				A7382B512A2FCB27006F73DC /* LaunchScreen.storyboard */,
 				A7382B542A2FCB27006F73DC /* Info.plist */,
 				A7382B4C2A2FCB25006F73DC /* Baby_Change.xcdatamodeld */,
+				A7382B762A2FD7BC006F73DC /* BabyChanges.geojson */,
+				A7382B7A2A2FD824006F73DC /* BabyChange.swift */,
 			);
 			path = "Baby Change";
 			sourceTree = "<group>";
@@ -235,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7382B532A2FCB27006F73DC /* LaunchScreen.storyboard in Resources */,
+				A7382B772A2FD7BC006F73DC /* BabyChanges.geojson in Resources */,
 				A7382B502A2FCB27006F73DC /* Assets.xcassets in Resources */,
 				A7382B4B2A2FCB25006F73DC /* Main.storyboard in Resources */,
 			);
@@ -261,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7382B7B2A2FD824006F73DC /* BabyChange.swift in Sources */,
 				A7382B482A2FCB25006F73DC /* ViewController.swift in Sources */,
 				A7382B442A2FCB25006F73DC /* AppDelegate.swift in Sources */,
 				A7382B462A2FCB25006F73DC /* SceneDelegate.swift in Sources */,

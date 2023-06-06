@@ -1,0 +1,23 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+    {
+    "type":"Feature",
+    "properties":{
+      "title":"Trinity Shopping Centre",
+      "desc":"...",
+      "floor":"Top floor",
+      "rating":"5.0",
+      "ratings":"1",
+      "added_by":"Thomas Chatting",
+      "added_at":"2023-06-06T21:56:00.000Z"
+    },
+   "geometry":{
+    "type":"Point",
+    "coordinates": [
+        -1.5440297444132693,53.79700956820782
+    ]
+   }
+   }
+  ]
+}
