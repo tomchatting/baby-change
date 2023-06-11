@@ -13,6 +13,9 @@ class BabyChange: NSObject, MKAnnotation {
     let desc: String?
     let floor: String?
     let rating: Float?
+    let ratings: Int?
+    let addedBy: String?
+    let addedAt: Date?
     let coordinate: CLLocationCoordinate2D
     
     init(
@@ -20,11 +23,17 @@ class BabyChange: NSObject, MKAnnotation {
         desc: String?,
         floor: String?,
         rating: Float?,
+        ratings: Int?,
+        addedBy: String?,
+        addedAt: Date?,
         coordinate: CLLocationCoordinate2D) {
             self.title = title
             self.desc = desc
             self.floor = floor
             self.rating = rating
+            self.ratings = ratings
+            self.addedBy = addedBy
+            self.addedAt = addedAt
             self.coordinate = coordinate
             
             super.init()
@@ -45,6 +54,11 @@ class BabyChange: NSObject, MKAnnotation {
         desc = properties["desc"] as? String
         floor = properties["floor"] as? String
         rating = properties["rating"] as? Float
+        ratings = properties["ratings"] as? Int
+        addedBy = properties["added_by"] as? String
+        
+        let dateFormatter = ISO8601DateFormatter()
+        addedAt = dateFormatter.date(from: properties["added_at"] as! String)
         coordinate = point.coordinate
         super.init()
     }

@@ -9,22 +9,58 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Map View-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Baby_Change" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Map View" id="BYZ-38-t0r" customClass="ViewController" customModule="Baby_Change" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pitchEnabled="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doa-Dr-NNQ">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pitchEnabled="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doa-Dr-NNQ">
+                                <rect key="frame" x="0.0" y="171" width="393" height="681"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search..." translatesAutoresizingMaskIntoConstraints="NO" id="Nl9-ZS-tEm">
+                                <rect key="frame" x="0.0" y="127" width="393" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="O2h-Yf-Xf7"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Wz0-de-N4f"/>
+                                </connections>
+                            </searchBar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gKm-iF-LQX">
+                                <rect key="frame" x="350" y="61.333333333333329" width="27" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="27" id="Qoq-u2-cHi"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Baby Changes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRh-o5-JjL">
+                                <rect key="frame" x="16" y="91" width="361" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Nl9-ZS-tEm" firstAttribute="centerX" secondItem="doa-Dr-NNQ" secondAttribute="centerX" id="7JA-aU-cq3"/>
+                            <constraint firstItem="gKm-iF-LQX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-1.4210854715202004e-14" id="JNW-my-KWJ"/>
+                            <constraint firstItem="GRh-o5-JjL" firstAttribute="centerX" secondItem="Nl9-ZS-tEm" secondAttribute="centerX" id="KMN-Pn-wDf"/>
+                            <constraint firstItem="Nl9-ZS-tEm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LI2-qV-4R2"/>
+                            <constraint firstItem="Nl9-ZS-tEm" firstAttribute="top" secondItem="gKm-iF-LQX" secondAttribute="bottom" constant="29.666666666666686" id="LPW-bC-lzq"/>
+                            <constraint firstItem="Nl9-ZS-tEm" firstAttribute="trailing" secondItem="doa-Dr-NNQ" secondAttribute="trailing" id="TaK-Hs-lgH"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="doa-Dr-NNQ" secondAttribute="bottom" constant="-34" id="VKl-R8-XHd"/>
+                            <constraint firstItem="gKm-iF-LQX" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="acT-H7-o6j"/>
+                            <constraint firstItem="GRh-o5-JjL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="dxc-cz-vEo"/>
+                            <constraint firstItem="GRh-o5-JjL" firstAttribute="trailing" secondItem="gKm-iF-LQX" secondAttribute="trailing" id="njW-yk-giy"/>
+                            <constraint firstItem="doa-Dr-NNQ" firstAttribute="top" secondItem="Nl9-ZS-tEm" secondAttribute="bottom" id="oyu-wZ-BWh"/>
+                            <constraint firstItem="Nl9-ZS-tEm" firstAttribute="top" secondItem="GRh-o5-JjL" secondAttribute="bottom" id="v6Z-d3-VGO"/>
+                            <constraint firstItem="Nl9-ZS-tEm" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zgr-Vh-Sou"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="doa-Dr-NNQ" id="7m0-Jz-eS2"/>
@@ -34,8 +70,75 @@
             </objects>
             <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
         </scene>
+        <!--About View-->
+        <scene sceneID="Gul-ZD-glk">
+            <objects>
+                <viewController storyboardIdentifier="AboutViewID" title="About View" keyboardType="off" id="kMw-aZ-Qkx" customClass="ViewController" customModule="Baby_Change" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0JH-AZ-Lhs">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="500"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="654-vy-MMy">
+                                <rect key="frame" x="16" y="108" width="361" height="226"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="226" id="ccO-XO-Uxi"/>
+                                </constraints>
+                                <string key="text">Welcome to the Baby Changes app.
+
+This application allows you to:
+
+ • Find baby changes, feeding rooms, family rooms and more
+ • Rate rooms based on your experience of them
+ • Add rooms you come across to share with other care-givers</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eb6-vr-2D1">
+                                <rect key="frame" x="150" y="445" width="93" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Continue"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Baby Changes" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L87-7Z-NAj">
+                                <rect key="frame" x="16" y="15" width="361" height="85"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJC-jC-urC">
+                                <rect key="frame" x="16" y="342" width="361" height="95"/>
+                                <string key="text">The locations suggested by this app have been added by users just like you. The app developer takes no responsibility for loss, injury, or theft incurred.</string>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Qxt-wQ-rCt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="654-vy-MMy" firstAttribute="trailing" secondItem="0JH-AZ-Lhs" secondAttribute="trailingMargin" id="9Ub-zV-YFg"/>
+                            <constraint firstItem="eb6-vr-2D1" firstAttribute="top" secondItem="uJC-jC-urC" secondAttribute="bottom" constant="21.666666666666686" id="C7e-bZ-aAW"/>
+                            <constraint firstItem="L87-7Z-NAj" firstAttribute="trailing" secondItem="654-vy-MMy" secondAttribute="trailing" id="JNk-xG-sgu"/>
+                            <constraint firstItem="654-vy-MMy" firstAttribute="centerX" secondItem="eb6-vr-2D1" secondAttribute="centerX" id="KpJ-gu-Mus"/>
+                            <constraint firstItem="654-vy-MMy" firstAttribute="top" secondItem="L87-7Z-NAj" secondAttribute="bottom" constant="8" id="NxD-6n-4iJ"/>
+                            <constraint firstItem="654-vy-MMy" firstAttribute="top" secondItem="0JH-AZ-Lhs" secondAttribute="top" constant="108" id="U1e-op-ui8"/>
+                            <constraint firstItem="654-vy-MMy" firstAttribute="trailing" secondItem="uJC-jC-urC" secondAttribute="trailing" id="WP6-12-sEJ"/>
+                            <constraint firstItem="uJC-jC-urC" firstAttribute="top" secondItem="654-vy-MMy" secondAttribute="bottom" constant="8" id="ZcK-gh-7Ad"/>
+                            <constraint firstItem="654-vy-MMy" firstAttribute="leading" secondItem="0JH-AZ-Lhs" secondAttribute="leadingMargin" id="b65-DE-m4f"/>
+                            <constraint firstItem="654-vy-MMy" firstAttribute="leading" secondItem="uJC-jC-urC" secondAttribute="leading" id="cU2-w0-okQ"/>
+                            <constraint firstItem="L87-7Z-NAj" firstAttribute="top" secondItem="0JH-AZ-Lhs" secondAttribute="topMargin" constant="-44" id="fXM-mX-pbj"/>
+                            <constraint firstItem="L87-7Z-NAj" firstAttribute="leading" secondItem="654-vy-MMy" secondAttribute="leading" id="oah-sE-AYa"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="393" height="500"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="66c-Co-SFM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1118" y="-18"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
